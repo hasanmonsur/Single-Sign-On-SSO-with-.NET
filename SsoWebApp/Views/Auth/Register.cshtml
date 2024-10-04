@@ -1,0 +1,18 @@
+﻿@model UserRegistrationModel
+@{
+    ViewData["Title"] = "Registration";
+}
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="Register" method="post">
+    <div>
+        <label>Email</label>
+        <input type="email" asp-for="Username" required />
+    </div>
+    <div>
+        <label>Password</label>
+        <input type="password" asp-for="PasswordHash" required />
+    </div>
+    <button type="submit">Register</button>
+</form>
+<a href="@Url.Action("Login", "Auth")">Already have an account? Login</a>
